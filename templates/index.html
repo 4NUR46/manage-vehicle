@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Reports Dashboard</h1>
+        <div>
+            <label for="reportType">Report Type:</label>
+            <select id="reportType">
+                <option value="Total Miles Driven">Total Miles Driven</option>
+                <!-- Add more report types if needed -->
+            </select>
+        </div>
+        <div>
+            <label for="frequency">Frequency:</label>
+            <select id="frequency">
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Yearly">Yearly</option>
+            </select>
+        </div>
+        <div>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+        </div>
+        <div>
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate">
+        </div>
+        <button onclick="fetchReportData()">Fetch Data</button>
+        <div id="reportData"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
